@@ -3,7 +3,7 @@
 This a restaurant application that allows users to input names of burgers they'd like to eat. When the burger name is submitted the app will display the burger in the burgers not devoured list. Each item in this list also has a devoured button. When the user clicks it, the burger will move to the burgers devoured list. This app stores every burger in the database wether it is devoured or not.
 
 ## Live Link
-https://radiant-garden-24847.herokuapp.com/
+https://shielded-dusk-58025.herokuapp.com/
 
 ## Technologies used:
 * HTML
@@ -15,7 +15,7 @@ https://radiant-garden-24847.herokuapp.com/
 * Express.js
 * Heroku
 * Handlebars
-* ORM
+* Sequelize
 
 ## Requirements for the app
 * Modular programming by separting data, routing, and server logic.
@@ -23,4 +23,4 @@ https://radiant-garden-24847.herokuapp.com/
 * NPM install handlbars.
 * Get and Post routes for serving HTML and API calls.
 * Burger.js folder for data.
-* ORM.js file for handing data queries.
+* Using sequelize orm for handing data queries.
