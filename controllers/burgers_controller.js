@@ -20,26 +20,26 @@ module.exports = function(app) {
 
 
 app.post("/api/newBurger", function(req, res) {
-    console.log(req.body);
+    console.log("hello" + req.body);
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
     // and complete property (req.body)
     db.Burger.create({
-      text: req.body.text,
-      complete: req.body.complete
+      burger_Name: req.body.burger_Name,
+      devoured: req.body.devoured
     }).then(function(data) {
       // We have access to the new todo as an argument inside of the callback function
       res.json(data);
     });
   });
-  app.put("/api/newBurger", function(req, res) {
+  app.put("/api/burgers/:id", function(req, res) {
+    console.log("line 36" + req.params.id);
     db.Burger.update({
-        text: req.body.text,
-        complete: req.body.complete
+        
+        devoured: req.body.devoured
       }, {
         where: {
-          id: req.body.id,
-          defaultValue: true
+          id: req.params.id,
         }
       }).then(function(data) {
         res.json(data);

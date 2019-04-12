@@ -7,7 +7,7 @@
 <div>
   {{#each burgers}}
     {{#unless devoured}}
-     <div> {{this.burger_name}} </div>
+     <div> {{this.burger_Name}} </div>
      <button type="submit" data-burgerid="{{this.id}}" id="switch" class="btn btn-light" data-devoured="{{devoured}}">Devour</button>
     {{/unless}}
   {{/each}}
@@ -22,7 +22,7 @@
 <div>
   {{#each burgers}}
     {{#if devoured}}
-      <div>{{this.burger_name}}</div>
+      <div>{{this.burger_Name}}</div>
     {{/if}}
   {{/each}}
 </div>

@@ -4,12 +4,13 @@ $(document).ready(function (){
         event.preventDefault();
     
         var newBurger = {
-          burger_name: $("#burgername").val().trim(),
+          burger_Name: $("#burgername").val().trim(),
           devoured: false
         };
-    
+        console.log("newBurger" + newBurger);
+
         // Send the POST request.
-        $.ajax("./api/newburger", {
+        $.ajax("./api/newBurger", {
           type: "POST",
           data: newBurger
         }).then(
@@ -21,13 +22,14 @@ $(document).ready(function (){
         );
       });
     // console.log("hello");
-    $("#switch").on("click", function(event) {
+    $("body").on("click", "button#switch", function(event) {
       event.preventDefault();
-      
-      var newDevoured = $(this).data("devoured");
+      console.log("line 27 clicked");
+      var newDevoured = true;
       var id = $(this).data("burgerid");
       var newDevouredState = {
-        devoured: newDevoured
+        devoured: newDevoured,
+
       };
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
@@ -37,7 +39,7 @@ $(document).ready(function (){
           console.log("burgerdevoured");
           location.reload();
         }
-      )
-    })
+      );
+    });
     
-})
+});
