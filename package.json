@@ -1,0 +1,35 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "homework assignment using mysql, node, express, handlebars, and orm",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vguercio10/sequelizedBurger.git"
+  },
+  "keywords": [
+    "burger",
+    "mysql",
+    "node",
+    "express",
+    "handlebars",
+    "orm"
+  ],
+  "author": "vanessa guercio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vguercio10/sequelizedBurger/issues"
+  },
+  "homepage": "https://github.com/vguercio10/sequelizedBurger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "nodemon": "^1.18.10",
+    "sequelize": "^5.3.1"
+  }
+}
