@@ -4,19 +4,48 @@ var express = require("express");
 var router = express.Router();
 
 // Importing the model burger.js file, its to use its database functions.
-var Burger = require("../models/burger.js");
+// var Burger = require("../models/burger.js");
 
 var db = require("../models");
 
 module.exports = function(app) {
     app.get("/", function(req, res) {
-        db.Burger.findAll({}).then(function(Burger){
-            res.json(Burger);
-        }).catch(function(err){
-            res.json(err);
+        db.Burger.findAll({}).then(function(data) {
+            let object = {
+                burgers: data
+            };
+            res.render("index", object);
         });
-});
-};
+    });
+
+
+app.post("/api/newBurger", function(req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.Burger.create({
+      text: req.body.text,
+      complete: req.body.complete
+    }).then(function(data) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(data);
+    });
+  });
+  app.put("/api/newBurger", function(req, res) {
+    db.Burger.update({
+        text: req.body.text,
+        complete: req.body.complete
+      }, {
+        where: {
+          id: req.body.id,
+          defaultValue: true
+        }
+      }).then(function(data) {
+        res.json(data);
+      });
+    });
+}
 
 // module.exports = router;
 

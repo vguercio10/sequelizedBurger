@@ -4,10 +4,12 @@ module.exports = function(sequelize, DataTypes ){
         burger_Name: {
             type: DataTypes.STRING
         },
+        
         devoured: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         }
+      
     });
 return Burger;
 }

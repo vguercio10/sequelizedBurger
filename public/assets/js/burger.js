@@ -9,7 +9,7 @@ $(document).ready(function (){
         };
     
         // Send the POST request.
-        $.ajax("/api/newburger", {
+        $.ajax("./api/newburger", {
           type: "POST",
           data: newBurger
         }).then(
